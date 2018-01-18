@@ -22,7 +22,7 @@ public class SpringSecurityAndAngularJsBasicApplication {
     public Map<String, Object> home(String name){
         Map<String, Object> model = new HashMap<>();
         model.put("id", UUID.randomUUID().toString());
-        model.put("content","Hello xuery");
+        model.put("content","Hello xuery1990");
         return model;
     }
 
