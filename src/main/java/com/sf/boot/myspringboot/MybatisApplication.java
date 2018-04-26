@@ -42,8 +42,8 @@ public class MybatisApplication {
         return new DataSourceTransactionManager(dataSource());
     }
 
-    public static void main(String[] args) {
-        SpringApplication.run(MybatisApplication.class, args);
-        logger.info("springboot start success");
-    }
+//    public static void main(String[] args) {
+//        SpringApplication.run(MybatisApplication.class, args);
+//        logger.info("springboot start success");
+//    }
 }
