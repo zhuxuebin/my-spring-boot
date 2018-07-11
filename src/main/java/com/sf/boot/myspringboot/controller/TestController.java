@@ -1,5 +1,6 @@
 package com.sf.boot.myspringboot.controller;
 
+import com.sf.boot.myspringboot.services.RemoteService;
 import com.sf.boot.myspringboot.services.TestServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,6 +12,9 @@ public class TestController {
 
 	@Autowired
     private TestServices testServices;
+
+	@Autowired
+    private RemoteService remoteService;
 	
 	@RequestMapping(value = "/show")
     public String show(){
@@ -26,7 +30,15 @@ public class TestController {
     public Object showDao(@PathVariable String country){
         return testServices.findByCountry(country);
     }
-    
-    
+
+    @RequestMapping("/retry")
+    public String retry(){
+        try{
+            remoteService.call();
+        } catch (Exception e) {
+
+        }
+        return "hello world";
+    }
     
 }
